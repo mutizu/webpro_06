@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>好きなゲーム一覧</title>
+  <style>
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid #999; padding: 4px 10px; }
+    th { background: #eee; }
+  </style>
+</head>
+<body>
+  <h2>好きなゲーム一覧</h2>
+  <table>
+    <tr><th>ID</th><th>タイトル</th><th>ジャンル</th><th>機種</th></tr>
+    <% for( let row of data ) { %>
+    <tr>
+      <td><%= row.id %></td>
+      <td><%= row.title %></td>
+      <td><%= row.genre %></td>
+      <td><%= row.platform %></td>
+    </tr>
+    <% } %>
+  </table>
+  <p><a href="/public/games_add.html">ゲームを追加する</a></p>
+</body>
+</html>

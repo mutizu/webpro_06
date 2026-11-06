@@ -26,6 +26,26 @@ app.get("/keiyo_add", (req, res) => {
   res.redirect('/public/keiyo_add.html');
 });
 
+let games = [
+  { id:1, title:"Minecraft", genre:"サンドボックス", platform:"PC" },
+  { id:2, title:"崩壊：スターレイル", genre:"RPG", platform:"スマホ" },
+  { id:3, title:"PEAK", genre:"協力アクション", platform:"PC" },
+  { id:4, title:"Shadowverse: Worlds Beyond", genre:"カードゲーム", platform:"スマホ" },
+];
+
+app.get("/games", (req, res) => {
+  res.render('games', { data: games });
+});
+
+app.get("/games_add", (req, res) => {
+  let title = req.query.title;
+  let genre = req.query.genre;
+  let platform = req.query.platform;
+  let newdata = { id: games.length + 1, title: title, genre: genre, platform: platform };
+  games.push( newdata );
+  res.render('games', { data: games });
+});
+
 app.get("/hello1", (req, res) => {
   const message1 = "Hello world";
   const message2 = "Bon jour";

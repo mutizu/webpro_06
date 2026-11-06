@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ゲームを追加する</title>
+</head>
+<body>
+  <h2>ゲームを追加する</h2>
+  <form action="/games_add">
+    <label for="title">タイトル</label>
+    <input type="text" name="title" id="title" required><br>
+    <label for="genre">ジャンル</label>
+    <input type="text" name="genre" id="genre" required><br>
+    <label for="platform">機種</label>
+    <input type="text" name="platform" id="platform" required><br>
+    <input type="submit" value="登録">
+  </form>
+  <p><a href="/games">一覧に戻る</a></p>
+</body>
+</html>
